@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyStatus = document.getElementById('copyStatus');
     const generateMoreBtn = document.getElementById('generateMoreBtn');
 
+    // جدید: دکمه‌های Join
+    const joinKeyhamsterBtn = document.getElementById('joinKeyhamsterBtn');
+    const joinSibzBtn = document.getElementById('joinSibzBtn');
+
     let selectedGame = null;
 
     gameOptions.forEach(option => {
@@ -245,6 +249,15 @@ document.addEventListener('DOMContentLoaded', () => {
         copyAllBtn.classList.add('hidden');
         keysList.innerHTML = '';
         keyCountLabel.innerText = 'Number of keys:';
+    });
+
+    // جدید: دکمه‌های Join
+    joinKeyhamsterBtn.addEventListener('click', () => {
+        window.open('https://t.me/keyganhamster', '_blank');
+    });
+
+    joinSibzBtn.addEventListener('click', () => {
+        window.open('https://t.me/sibz_airdrop', '_blank');
     });
 
     const generateClientId = () => {

@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const generatedKeysTitle = document.getElementById('generatedKeysTitle');
     const copyStatus = document.getElementById('copyStatus');
     const generateMoreBtn = document.getElementById('generateMoreBtn');
+    const sourceCode = document.getElementById('sourceCode');
 
     let selectedGame = null;
 
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return null;
             }
 
-            for (let i = 0; i < 11; i++) {
+            for (let i = 0; i < 25; i++) {
                 await sleep(EVENTS_DELAY * delayRandom());
                 const hasCode = await emulateProgress(clientToken, game.promoId);
                 updateProgress(7 / keyCount, 'Emulating progress...');
@@ -245,6 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
         copyAllBtn.classList.add('hidden');
         keysList.innerHTML = '';
         keyCountLabel.innerText = 'Number of keys:';
+    });
+
+    sourceCode.addEventListener('click', () => {
+        window.open('https://github.com/ShafiqSadat/HamsterKeyGenWeb', '_blank');
     });
 
     const generateClientId = () => {
